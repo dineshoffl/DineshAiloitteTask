@@ -13,14 +13,14 @@ import com.ailoitte.dager.DaggerApplicationComponent;
 import com.ailoitte.retrofit.RetrofitModule;
 
 
-public class ShoppingApplication extends MultiDexApplication {
+public class Application extends MultiDexApplication {
 
-    public static final String TAG = ShoppingApplication.class
+    public static final String TAG = Application.class
             .getSimpleName();
     private static Context context;
-    private static ShoppingApplication mInstance;
+    private static Application mInstance;
     private ApplicationComponent mComponent;
-    public static ShoppingApplication getContext() {
+    public static Application getContext() {
         return mInstance;
     }
 
@@ -95,8 +95,8 @@ public class ShoppingApplication extends MultiDexApplication {
     public void onLowMemory() {
         super.onLowMemory();
     }
-    public static ShoppingApplication from(@NonNull Context context) {
-        return (ShoppingApplication) context.getApplicationContext();
+    public static Application from(@NonNull Context context) {
+        return (Application) context.getApplicationContext();
     }
 
 }

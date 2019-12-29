@@ -31,27 +31,11 @@ import java.util.TimeZone;
 
 
 public abstract class BaseActivity extends AppCompatActivity {
-    ImageView my_cart, notification;
-    //  NotificationBadge notify_badge, cart_badge;
-    boolean isloading = false;
-    LinearLayout image_lay;
-    int totalcount = -1;
+
     ProgressDialog dialog;
-    TextView tv_clickhere;
-    LinearLayout timer_lay;
+
     AlertDialog alertDialog, commonalert;
-    ImageView imgback;
-    int REQUEST_CHECK_SETTINGS = 100;
-    TextView tv_title;
-    boolean isLastPage = false;
-    Button btn_ok;
-    int FILE_REQUEST_CODE = 100;
-    int IMAGE_REQUEST_CODE = 101;
-    int CAMERA_REQUEST_CODE = 102;
-    TextView tv_hrs, tv_mins, tv_secs,tv_tool_tittle;
-    private Handler handler = new Handler();
-    private Runnable runnable;
-    TimeZone timeZone;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,14 +49,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
-    public void openSettings() {
-        startActivity(new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
-                Uri.fromParts("package", getPackageName(), null)));
-//        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-//        Uri uri = Uri.fromParts("package", getPackageName(), null);
-//        intent.setData(uri);
-//        startActivityForResult(intent, 101);
-    }
+
 
     public void shwProgress() {
         dialog.setMessage(getString(R.string.please_wait));
@@ -104,73 +81,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
 
-//    public File saveBitmapToFile(File file){
-//
-//
-//        long length = file.length();
-//        length = length/1024;
-//        if (length>400){
-//            try {
-//                // BitmapFactory options to downsize the image
-//                BitmapFactory.Options o = new BitmapFactory.Options();
-//                o.inJustDecodeBounds = true;
-//                o.inSampleSize = 6;
-//                // factor of downsizing the image
-//
-//                FileInputStream inputStream = new FileInputStream(file);
-//                //Bitmap selectedBitmap = null;
-//                BitmapFactory.decodeStream(inputStream, null, o);
-//                inputStream.close();
-//
-//                // The new size we want to scale to
-//                final int REQUIRED_SIZE=400;
-//
-//                // Find the correct scale value. It should be the power of 2.
-//                int scale = 1;
-//                while(o.outWidth / scale / 2 >= REQUIRED_SIZE &&
-//                        o.outHeight / scale / 2 >= REQUIRED_SIZE) {
-//                    scale *= 2;
-//                }
-//
-//                BitmapFactory.Options o2 = new BitmapFactory.Options();
-//                o2.inSampleSize = scale;
-//                inputStream = new FileInputStream(file);
-//
-//                Bitmap selectedBitmap = BitmapFactory.decodeStream(inputStream, null, o2);
-//                inputStream.close();
-//
-//                // here i override the original image file
-//                file.createNewFile();
-//                FileOutputStream outputStream = new FileOutputStream(file);
-//
-//                selectedBitmap.compress(Bitmap.CompressFormat.JPEG, 200 , outputStream);
-//
-//                return file;
-//            } catch (Exception e) {
-//                return file;
-//            }
-//        }
-//        else {
-//            return file;
-//        }
-//
-//    }
-//    public void setcameraPicker(int maxSelect) {
-//        Intent intent = new Intent(this, FilePickerActivity.class);
-//        intent.putExtra(FilePickerActivity.CONFIGS, new Configurations.Builder()
-//                .setCheckPermission(true)
-//                .setShowImages(true)
-//                .setShowVideos(false)
-//                .setShowFiles(false)
-//                .enableImageCapture(true)
-//                .enableVideoCapture(false)
-//                .setIgnoreNoMedia(true)
-//                .setMaxSelection(maxSelect)
-//                .build());
-//        intent.putExtra("camera", "camera");
-//        startActivityForResult(intent, CAMERA_REQUEST_CODE);
-//
-//    }
 
     public void closeCommonAlert() {
         commonalert.dismiss();
@@ -201,10 +111,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
 
-    protected void onStop() {
-        super.onStop();
-        handler.removeCallbacks(runnable);
-    }
 
     public void hideKeyboard() {
         View view = this.getCurrentFocus();
@@ -231,7 +137,5 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onBackPressed();
         // finish();
     }
-
-
     protected abstract int getlayout();
 }

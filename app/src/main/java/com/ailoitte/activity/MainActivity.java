@@ -1,11 +1,8 @@
 package com.ailoitte.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,13 +10,11 @@ import android.widget.Toast;
 
 import com.ailoitte.R;
 import com.ailoitte.adapter.MyAdapter;
-import com.ailoitte.helper.FadePageTransformer;
-import com.ailoitte.helper.ShoppingApplication;
+import com.ailoitte.helper.Application;
 import com.ailoitte.helper.UtilsDefault;
 import com.ailoitte.helper.ZoomOutPageTransformer;
 import com.ailoitte.models.ModelPhotos;
 import com.ailoitte.retrofit.API;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +40,7 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ShoppingApplication.getContext().getComponent().inject(this);
+        Application.getContext().getComponent().inject(this);
         viewPager=findViewById(R.id.pager);
         name=findViewById(R.id.username);
         story=findViewById(R.id.tv_story_name);

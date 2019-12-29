@@ -3,7 +3,7 @@ package com.ailoitte.dager;
 import android.content.Context;
 
 
-import com.ailoitte.helper.ShoppingApplication;
+import com.ailoitte.helper.Application;
 import com.ailoitte.retrofit.API;
 
 import javax.inject.Singleton;
@@ -18,22 +18,19 @@ public class AppModule {
 
 
 
-    private final ShoppingApplication aviapp;
+    private final Application app;
 
-    public AppModule(ShoppingApplication app) {
-        this.aviapp = app;
+    public AppModule(Application app) {
+        this.app = app;
     }
     //provides dependencies (return application class objects)
     @Provides
     @Singleton
     Context provideApplicationContext() {
-        return aviapp;
+        return app;
     }
 
-    //provides dependencies (return sharedprference objects)
 
-
-    //provides dependencies (return API class objects)
     @Provides
     public API provideViduApiInterface(Retrofit retrofit) {
         return retrofit.create(API.class);

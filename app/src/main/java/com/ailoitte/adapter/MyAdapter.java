@@ -46,7 +46,7 @@ public class MyAdapter extends PagerAdapter {
         ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.item_slide, collection, false);
         ImageView imageView=layout.findViewById(R.id.image);
         Picasso.with(context).load(images.get(position).getImg_src()).into(imageView);
-        Log.d("iamgesdd", "instantiateItem: "+images.get(position).getImg_src());
+        Log.d("imagesss", "instantiateItem: "+images.get(position).getImg_src());
         collection.addView(layout);
         return layout;
     }

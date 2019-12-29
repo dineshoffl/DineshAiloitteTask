@@ -6,7 +6,7 @@ import androidx.annotation.Nullable;
 
 
 import com.ailoitte.BuildConfig;
-import com.ailoitte.helper.ShoppingApplication;
+import com.ailoitte.helper.Application;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -32,7 +32,7 @@ public class RetrofitModule
 {
     String mBaseUrl;
     Context context;
-    public RetrofitModule(String baseUrl, ShoppingApplication context) {
+    public RetrofitModule(String baseUrl, Application context) {
         this.mBaseUrl = baseUrl;
         this.context= context;
 

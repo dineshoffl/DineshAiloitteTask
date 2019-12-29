@@ -257,13 +257,13 @@ public class UtilsDefault {
 
     private static void initializeSharedPreference() {
 
-        sharedPreferences = ShoppingApplication.getGlobalContext()
+        sharedPreferences = Application.getGlobalContext()
                 .getSharedPreferences(SHARED_PREFERENCE_UTILS,
                         Context.MODE_PRIVATE);
     }
     private static void initializeFcmSharedPreference() {
 
-        sharedPreferencesFcm = ShoppingApplication.getGlobalContext()
+        sharedPreferencesFcm = Application.getGlobalContext()
                 .getSharedPreferences(SHARED_PREFERENCE_FCM_UTILS,
                         Context.MODE_PRIVATE);
     }
@@ -340,7 +340,7 @@ public class UtilsDefault {
     }
 
     public static boolean isOnline() {
-        ConnectivityManager cm = (ConnectivityManager) ShoppingApplication
+        ConnectivityManager cm = (ConnectivityManager) Application
                 .getGlobalContext().getSystemService(
                         Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
@@ -452,7 +452,7 @@ public class UtilsDefault {
         Intent intent = new Intent(Intent.ACTION_SEND, null);
         intent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
         intent.setType("text/plain");
-        PackageManager pManager = ShoppingApplication.getGlobalContext().getPackageManager();
+        PackageManager pManager = Application.getGlobalContext().getPackageManager();
         mApps = pManager.queryIntentActivities(intent,
                 PackageManager.COMPONENT_ENABLED_STATE_DEFAULT);
         return mApps;

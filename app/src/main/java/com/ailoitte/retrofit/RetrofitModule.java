@@ -47,35 +47,7 @@ public class RetrofitModule
             public Response intercept(Chain chain) throws IOException {
                 Request original = chain.request();
                 Request request = null;
-//                try {
-//                    if (UtilsDefault.getSharedPreferenceValue(Constants.API_KEY)!=null){
-//                        String token="";
-//                        if(UtilsDefault.getSharedPreferenceValue(Constants.API_KEY).contains("Bearer")){
-//                            token=UtilsDefault.getSharedPreferenceValue(Constants.API_KEY);
-//                        }
-//                        else {
-//                            token="Bearer " +UtilsDefault.getSharedPreferenceValue(Constants.API_KEY);
-//                        }
-//                        request = chain.request().newBuilder()
-//                                .addHeader("Content-Type", "application/json")
-//                                .addHeader("Authorization",token)
-//
-//                                .method(original.method(), original.body())
-//                                .build();
-//                        Log.d("Authorization", "intercept: "+"Bearer "
-//                                +UtilsDefault.getSharedPreferenceValue(Constants.API_KEY));
-//                    }
-//                    else {
-//
-////                        Log.d("Authorization", "intercept: "+"Bearer "
-////                                +UtilsDefault.getSharedPreferenceValue(Constants.API_KEY));
-//                    }
-//
-//
-//                   // Log.d("apikey", "intercept: "+UtilsDefault.getSharedPreferenceValue(Constants.AUTH_TOKEN));
-//                } catch (Exception authFailureError) {
-//                    authFailureError.printStackTrace();
-//                }
+
                 request = chain.request().newBuilder()
                         .addHeader("Content-Type", "application/json")
                         .method(original.method(), original.body())

@@ -1,0 +1,32 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+    </style>
+
+    <style name="boldfontstyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+    </style>
+
+    <style name="blackfontstyle">
+        <item name="android:fontFamily">@font/latoblack</item>
+    </style>
+
+    <style name="lightfontstyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/lato_light</item>
+    </style>
+
+    <style name="regulerfontstyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/lato_regular</item>
+    </style>
+
+</resources>

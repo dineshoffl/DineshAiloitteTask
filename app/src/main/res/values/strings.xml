@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DineshAiloitteTask</string>
+    <string name="error_no_net">No Internet connection</string>
+    <string name="please_wait">Please wait</string>
+    <string name="server_error">Server Error</string>
+
+</resources>
